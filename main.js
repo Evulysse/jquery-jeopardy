@@ -18,7 +18,7 @@ const answerInputElement = answerFormElement.querySelector("input[type=\"text\"]
 const answerBtnElement = answerFormElement.querySelector("button");
 
 // const JSON_FILE_URL = `${location.href}/data/jeopardy.json` ;
-const JSON_FILE_URL = '/data/jeopardy.json';
+const JSON_FILE_URL ='data/jeopardy.json';
 
 function createBoardRow(amount) {
     const rowElement = document.importNode(boardRowElement, true);
@@ -116,7 +116,7 @@ function pickRandomQuestion(questions) {
     return randomQuestion;
 }
 
-
+// For testing purposes only! Please remove in production!!!
 function alwaysWin(answer) {
     answerInputElement.value = answer;
 }
@@ -132,7 +132,7 @@ function attachQuestionToBtnHandler(event) {
             return question;
         }).then(question => {
 
-            alwaysWin(question.answer); 
+            alwaysWin(question.answer); // To be removed!!!
 
             let questionElement = questionDisplayElement.querySelector("p span");
             questionElement.innerHTML = question.question;
